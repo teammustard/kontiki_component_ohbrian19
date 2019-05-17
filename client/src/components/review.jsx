@@ -8,7 +8,7 @@ class Review extends React.Component {
   render() {
     return (
       <div>
-        <h4>{this.props.review.name}</h4>
+        <div style={{fontWeight: "bold"}}>{this.props.review.name}</div>
         <StarRatings
           rating={this.props.review.star_rating}
           starRatedColor="gold"
@@ -16,9 +16,10 @@ class Review extends React.Component {
           starDimension="20px"
           starSpacing="5px"
         />
-        <div>{this.props.review.title}</div>
+        <div style={{fontWeight: "bold"}}>{this.props.review.title}</div>
         <div>{this.props.review.description}</div>
         <div>Booked From {this.props.review.booked_from} Traveled {this.props.review.traveled_date} </div>
+        <br></br>
       </div>
     )
   }

@@ -5,7 +5,16 @@ const db = new sqlite3.Database('./server/db/kontiki.db');
 const getAllData = (callback) => {
   db.all(`SELECT * FROM reviews`, (err, data) => {
     if (err) {
-      console.log(err);
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  })
+}
+
+const getStarData = (star, callback) => {
+  db.all(`SELECT * FROM reviews WHERE star_rating=(?)`, [star], (err, data) => {
+    if (err) {
       callback(err);
     } else {
       callback(null, data);
@@ -14,5 +23,6 @@ const getAllData = (callback) => {
 }
 
 module.exports = {
-  getAllData
+  getAllData,
+  getStarData
 };
