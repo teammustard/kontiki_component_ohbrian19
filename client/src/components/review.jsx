@@ -1,5 +1,5 @@
-import React from 'react';
-import StarRatings from 'react-star-ratings';
+import React from "react";
+import StarRatings from "react-star-ratings";
 
 class Review extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Review extends React.Component {
   render() {
     return (
       <div>
-        <div style={{fontWeight: "bold"}}>{this.props.review.name}</div>
+        <div style={{ fontWeight: "bold" }}>{this.props.review.name}</div>
         <StarRatings
           rating={this.props.review.star_rating}
           starRatedColor="gold"
@@ -16,13 +16,16 @@ class Review extends React.Component {
           starDimension="20px"
           starSpacing="5px"
         />
-        <div style={{fontWeight: "bold"}}>{this.props.review.title}</div>
+        <div style={{ fontWeight: "bold" }}>{this.props.review.title}</div>
         <div>{this.props.review.description}</div>
-        <div>Booked From {this.props.review.booked_from} Traveled {this.props.review.traveled_date} </div>
-        <br></br>
+        <div>
+          Booked From {this.props.review.booked_from} Traveled{" "}
+          {this.props.review.traveled_date}{" "}
+        </div>
+        <br />
       </div>
-    )
+    );
   }
-};
+}
 
 export default Review;
