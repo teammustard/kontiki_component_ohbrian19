@@ -3,7 +3,16 @@ import StarRatings from "react-star-ratings";
 import SliderReview from "./sliderReview.jsx";
 import Slider from "react-slick";
 
-const SliderComponent = ({ reviews, one, two, three, four, five }) => {
+const SliderComponent = ({
+  reviews,
+  one,
+  two,
+  three,
+  four,
+  five,
+  displayReviews,
+  handleStarChange
+}) => {
   let total = one + two * 2 + three * 3 + four * 4 + five * 5;
   let average = total / reviews.length;
   let round = Math.round(average * 2) / 2;
@@ -37,36 +46,26 @@ const SliderComponent = ({ reviews, one, two, three, four, five }) => {
         <div>
           <div>
             <div>Filter by traveller’s rating</div>
-            <div>
-              <div>
-                <div>
-                  ★ 5 <span className="starBackground">{one}</span>
-                </div>
+            <div onClick={handleStarChange}>
+              <div id="5">
+                ★ 5 <span className="starBackground" id="5">{one}</span>
               </div>
-              <div>
-                <div>
-                  ★ 4 <span className="starBackground">{two}</span>
-                </div>
+              <div id="4">
+                ★ 4 <span className="starBackground" id="4">{two}</span>
               </div>
-              <div>
-                <div>
-                  ★ 3 <span className="starBackground">{three}</span>
-                </div>
+              <div id="3">
+                ★ 3 <span className="starBackground" id="3">{three}</span>
               </div>
-              <div>
-                <div>
-                  ★ 2 <span className="starBackground">{four}</span>
-                </div>
+              <div id="2">
+                ★ 2 <span className="starBackground" id="2">{four}</span>
               </div>
-              <div>
-                <div>
-                  ★ 1 <span className="starBackground">{five}</span>
-                </div>
+              <div id="1">
+                ★ 1 <span className="starBackground" id="1">{five}</span>
               </div>
             </div>
           </div>
         </div>
-        {reviews.slice(0, 20).map((review, index) => {
+        {displayReviews.slice(0, 20).map((review, index) => {
           return <SliderReview key={index} review={review} />;
         })}
       </Slider>

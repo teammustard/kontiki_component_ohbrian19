@@ -9,6 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       allReviews: [], // all the reviews
+      displayReviews: [], // display based on stars
       modalToggle: false, // state of modal button popup
       oneStar: 0,
       twoStar: 0,
@@ -21,6 +22,7 @@ class App extends React.Component {
     this.sortReviewsByStar = this.sortReviewsByStar.bind(this);
     this.getAllReviews = this.getAllReviews.bind(this);
     this.numberOfStars = this.numberOfStars.bind(this);
+    this.handleStarChange = this.handleStarChange.bind(this);
   }
 
   componentDidMount() {
@@ -34,10 +36,13 @@ class App extends React.Component {
       .then(data => {
         this.setState(
           {
-            allReviews: data.data
+            allReviews: data.data,
+            displayReviews: data.data
           },
           () => {
-            this.numberOfStars();
+            if (this.state.oneStar === 0 && this.state.fiveStar === 0) {
+              this.numberOfStars();
+            }
           }
         );
       })
@@ -56,13 +61,27 @@ class App extends React.Component {
         .get(`/kontiki/stars/${id}`)
         .then(data => {
           this.setState({
-            allReviews: data.data
+            displayReviews: data.data
           });
         })
         .catch(err => {
           console.log(err);
         });
     }
+  }
+
+  handleStarChange(e) { // sorts reviews by star when clicked
+    let id = e.target.id;
+    return axios
+      .get(`/kontiki/stars/${id}`)
+      .then(data => {
+        this.setState({
+          displayReviews: data.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   numberOfStars() {
@@ -100,20 +119,21 @@ class App extends React.Component {
   }
 
   render() {
-    
     return (
       <div>
         <div className="reviewsTitle">REVIEWS</div>
         <div className="tourTitle">for Argentina & Brazil Experience</div>
         <br />
         {this.state.allReviews.length > 0 ? (
-          <SliderComponent 
-          reviews={this.state.allReviews}
-          one={this.state.oneStar}
-          two={this.state.twoStar}
-          three={this.state.threeStar}
-          four={this.state.fourStar}
-          five={this.state.fiveStar}
+          <SliderComponent
+            reviews={this.state.allReviews}
+            displayReviews={this.state.displayReviews}
+            one={this.state.oneStar}
+            two={this.state.twoStar}
+            three={this.state.threeStar}
+            four={this.state.fourStar}
+            five={this.state.fiveStar}
+            handleStarChange={this.handleStarChange}
           />
         ) : null}
         <br />
@@ -126,6 +146,7 @@ class App extends React.Component {
           show={this.state.modalToggle}
           handleClose={this.toggleModal}
           reviews={this.state.allReviews}
+          displayReviews={this.state.displayReviews}
           handleSortChange={this.sortReviewsByStar}
           getAllReviews={this.getAllReviews}
           one={this.state.oneStar}
@@ -133,6 +154,7 @@ class App extends React.Component {
           three={this.state.threeStar}
           four={this.state.fourStar}
           five={this.state.fiveStar}
+          handleStarChange={this.handleStarChange}
         />
       </div>
     );

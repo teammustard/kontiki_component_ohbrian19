@@ -18,8 +18,8 @@ class Graph extends React.Component {
 
     return (
       <div>
-        <div>
-          <div>{average}</div>
+        <div align="center">
+          <div className="averageRating">{average}</div>
           <div>
             <StarRatings
               rating={round || 0}
@@ -29,17 +29,43 @@ class Graph extends React.Component {
               starSpacing="5px"
             />
           </div>
+          <br />
           <div>{this.props.reviews.length} independent reviews</div>
         </div>
         <br />
         <div>
           <div>Filter by traveller’s rating</div>
-          <div>
-            <div>★ 5 {this.props.five}</div>
-            <div>★ 4 {this.props.four}</div>
-            <div>★ 3 {this.props.three}</div>
-            <div>★ 2 {this.props.two}</div>
-            <div>★ 1 {this.props.one}</div>
+          <div onClick={this.props.handleStarChange}>
+            <div id="5">
+              ★ 5{" "}
+              <span className="starBackground" id="5">
+                {this.props.one}
+              </span>
+            </div>
+            <div id="4">
+              ★ 4{" "}
+              <span className="starBackground" id="4">
+                {this.props.two}
+              </span>
+            </div>
+            <div id="3">
+              ★ 3{" "}
+              <span className="starBackground" id="3">
+                {this.props.three}
+              </span>
+            </div>
+            <div id="2">
+              ★ 2{" "}
+              <span className="starBackground" id="2">
+                {this.props.four}
+              </span>
+            </div>
+            <div id="1">
+              ★ 1{" "}
+              <span className="starBackground" id="1">
+                {this.props.five}
+              </span>
+            </div>
           </div>
         </div>
       </div>

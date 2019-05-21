@@ -12,7 +12,9 @@ const Popup = ({
   two,
   three,
   four,
-  five
+  five,
+  displayReviews,
+  handleStarChange
 }) => {
   return (
     <div className={show ? "modal display-block" : "modal display-none"}>
@@ -43,8 +45,8 @@ const Popup = ({
                 <option value="NEAR ME">NEAR ME</option>
               </select>
               <button onClick={getAllReviews}>RESET</button>
-              {reviews.length > 0
-                ? reviews.map((review, index) => {
+              {displayReviews.length > 0
+                ? displayReviews.map((review, index) => {
                     return <Review key={index} review={review} />;
                   })
                 : null}
@@ -58,6 +60,7 @@ const Popup = ({
               three={three}
               four={four}
               five={five}
+              handleStarChange={handleStarChange}
             />
           </div>
         </div>
