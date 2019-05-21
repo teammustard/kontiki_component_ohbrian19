@@ -7,7 +7,12 @@ class Graph extends React.Component {
   }
 
   render() {
-    let total = this.props.one + this.props.two * 2 + this.props.three * 3 + this.props.four * 4 + this.props.five * 5;
+    let total =
+      this.props.one +
+      this.props.two * 2 +
+      this.props.three * 3 +
+      this.props.four * 4 +
+      this.props.five * 5;
     let average = total / this.props.reviews.length;
     let round = Math.round(average * 2) / 2;
 

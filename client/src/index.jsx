@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import Popup from "./components/popup.jsx";
-import Slider from "react-slick";
-import StarRatings from "react-star-ratings";
+import SliderComponent from "./components/sliderComponent.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -101,77 +100,27 @@ class App extends React.Component {
   }
 
   render() {
-    const settings = {
-      dots: true,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1
-    };
-    let total =
-      this.state.oneStar +
-      this.state.twoStar * 2 +
-      this.state.threeStar * 3 +
-      this.state.fourStar * 4 +
-      this.state.fiveStar * 5;
-    let average = total / this.state.allReviews.length;
-    let round = Math.round(average * 2) / 2;
-
+    
     return (
       <div>
         <div className="reviewsTitle">REVIEWS</div>
         <div className="tourTitle">for Argentina & Brazil Experience</div>
         <br />
-        <div>
-          <Slider {...settings}>
-            <div>
-              <div>
-                <div>{average || 0}</div>
-                <div>
-                  <StarRatings
-                    rating={round || 0}
-                    starRatedColor="gold"
-                    numberOfStars={5}
-                    starDimension="20px"
-                    starSpacing="5px"
-                  />
-                </div>
-                <div>{this.state.allReviews.length} independent reviews</div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <div>Filter by traveller’s rating</div>
-                <div>
-                  <div>★ 5 {this.state.fiveStar}</div>
-                  <div>★ 4 {this.state.fourStar}</div>
-                  <div>★ 3 {this.state.threeStar}</div>
-                  <div>★ 2 {this.state.twoStar}</div>
-                  <div>★ 1 {this.state.oneStar}</div>
-                </div>
-              </div>
-            </div>
-            {this.state.allReviews.length > 0
-              ? this.state.allReviews.slice(0, 20).map((review, index) => {
-                  return (
-                    <div key={index}>
-                      <div style={{ fontWeight: "bold" }}>{review.name}</div>
-                      <StarRatings
-                        rating={review.star_rating}
-                        starRatedColor="gold"
-                        numberOfStars={5}
-                        starDimension="20px"
-                        starSpacing="5px"
-                      />
-                      <div>Traveled {review.traveled_date}</div>
-                      <div style={{ fontWeight: "bold" }}>{review.title}</div>
-                      <div>{review.description}</div>
-                      <br />
-                    </div>
-                  );
-                })
-              : null}
-          </Slider>
+        {this.state.allReviews.length > 0 ? (
+          <SliderComponent 
+          reviews={this.state.allReviews}
+          one={this.state.oneStar}
+          two={this.state.twoStar}
+          three={this.state.threeStar}
+          four={this.state.fourStar}
+          five={this.state.fiveStar}
+          />
+        ) : null}
+        <br />
+        <div align="center">
+          <button className="readAllButton" onClick={this.toggleModal}>
+            READ ALL REVIEWS
+          </button>
         </div>
         <Popup
           show={this.state.modalToggle}
@@ -185,13 +134,6 @@ class App extends React.Component {
           four={this.state.fourStar}
           five={this.state.fiveStar}
         />
-        <br />
-        <br />
-        <div align="center">
-          <button className="readAllButton" onClick={this.toggleModal}>
-            READ ALL REVIEWS
-          </button>
-        </div>
       </div>
     );
   }
