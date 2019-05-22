@@ -6,7 +6,6 @@ const Popup = ({
   show,
   handleClose,
   reviews,
-  handleSortChange,
   getAllReviews,
   one,
   two,
@@ -14,7 +13,9 @@ const Popup = ({
   four,
   five,
   displayReviews,
-  handleStarChange
+  handleStarChange,
+  selected,
+  backgroundColor
 }) => {
   return (
     <div className={show ? "modal display-block" : "modal display-none"}>
@@ -31,8 +32,8 @@ const Popup = ({
             <br />
             <div>
               Showing
-              <select id="starsRate" onChange={handleSortChange}>
-                <option value="MOST RECENT">MOST RECENT</option>
+              <select id="starsRate" onChange={handleStarChange} selected value={selected}>
+                <option value="0">MOST RECENT</option>
                 <option value="5">FIVE STARS</option>
                 <option value="4">FOUR STARS</option>
                 <option value="3">THREE STARS</option>
@@ -61,6 +62,7 @@ const Popup = ({
               four={four}
               five={five}
               handleStarChange={handleStarChange}
+              backgroundColor={backgroundColor}
             />
           </div>
         </div>

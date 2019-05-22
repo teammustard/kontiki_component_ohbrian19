@@ -11,6 +11,7 @@ class App extends React.Component {
       allReviews: [], // all the reviews
       displayReviews: [], // display based on stars
       modalToggle: false, // state of modal button popup
+      selected: 0, // selected option value
       oneStar: 0,
       twoStar: 0,
       threeStar: 0,
@@ -19,10 +20,11 @@ class App extends React.Component {
     };
 
     this.toggleModal = this.toggleModal.bind(this);
-    this.sortReviewsByStar = this.sortReviewsByStar.bind(this);
+    // this.sortReviewsByStar = this.sortReviewsByStar.bind(this);
     this.getAllReviews = this.getAllReviews.bind(this);
     this.numberOfStars = this.numberOfStars.bind(this);
     this.handleStarChange = this.handleStarChange.bind(this);
+    this.backgroundColor = this.backgroundColor.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +39,8 @@ class App extends React.Component {
         this.setState(
           {
             allReviews: data.data,
-            displayReviews: data.data
+            displayReviews: data.data,
+            selected: 0
           },
           () => {
             if (this.state.oneStar === 0 && this.state.fiveStar === 0) {
@@ -51,37 +54,34 @@ class App extends React.Component {
       });
   }
 
-  sortReviewsByStar() {
+  handleStarChange(e) {
     // sorts reviews by star when clicked
-    let id = document.getElementById("starsRate").value;
-    if (id === "MOST RECENT") {
-      this.getAllReviews();
-    } else {
-      return axios
-        .get(`/kontiki/stars/${id}`)
-        .then(data => {
-          this.setState({
-            displayReviews: data.data
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
-  }
-
-  handleStarChange(e) { // sorts reviews by star when clicked
     let id = e.target.id;
+    if (!Number(id)) {
+      id = document.getElementById("starsRate").value;
+    }
     return axios
       .get(`/kontiki/stars/${id}`)
       .then(data => {
-        this.setState({
-          displayReviews: data.data
-        });
+        if (this.state.selected === id || id === "0") {
+          this.getAllReviews();
+        } else {
+          this.setState({
+            displayReviews: data.data,
+            selected: id
+          });
+        }
       })
       .catch(err => {
         console.log(err);
       });
+  }
+
+  backgroundColor(selected) {
+    // change background when clicked
+    if (this.state.selected === selected) {
+      return { background: "#FFC432" };
+    }
   }
 
   numberOfStars() {
@@ -134,6 +134,7 @@ class App extends React.Component {
             four={this.state.fourStar}
             five={this.state.fiveStar}
             handleStarChange={this.handleStarChange}
+            backgroundColor={this.backgroundColor}
           />
         ) : null}
         <br />
@@ -147,7 +148,6 @@ class App extends React.Component {
           handleClose={this.toggleModal}
           reviews={this.state.allReviews}
           displayReviews={this.state.displayReviews}
-          handleSortChange={this.sortReviewsByStar}
           getAllReviews={this.getAllReviews}
           one={this.state.oneStar}
           two={this.state.twoStar}
@@ -155,6 +155,8 @@ class App extends React.Component {
           four={this.state.fourStar}
           five={this.state.fiveStar}
           handleStarChange={this.handleStarChange}
+          selected={this.state.selected}
+          backgroundColor={this.backgroundColor}
         />
       </div>
     );
