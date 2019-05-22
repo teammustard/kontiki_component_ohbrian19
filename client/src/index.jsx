@@ -20,7 +20,6 @@ class App extends React.Component {
     };
 
     this.toggleModal = this.toggleModal.bind(this);
-    // this.sortReviewsByStar = this.sortReviewsByStar.bind(this);
     this.getAllReviews = this.getAllReviews.bind(this);
     this.numberOfStars = this.numberOfStars.bind(this);
     this.handleStarChange = this.handleStarChange.bind(this);
@@ -55,11 +54,12 @@ class App extends React.Component {
   }
 
   handleStarChange(e) {
-    // sorts reviews by star when clicked
+    // sorts reviews by star onchange or onclick
     let id = e.target.id;
     if (!Number(id)) {
       id = document.getElementById("starsRate").value;
     }
+
     return axios
       .get(`/kontiki/stars/${id}`)
       .then(data => {
@@ -78,7 +78,7 @@ class App extends React.Component {
   }
 
   backgroundColor(selected) {
-    // change background when clicked
+    // change background when clicked on stars
     if (this.state.selected === selected) {
       return { background: "#FFC432" };
     }
@@ -120,7 +120,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mainBox">
         <div className="reviewsTitle">REVIEWS</div>
         <div className="tourTitle">for Argentina & Brazil Experience</div>
         <br />

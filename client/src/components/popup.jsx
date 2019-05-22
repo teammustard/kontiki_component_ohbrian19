@@ -32,7 +32,12 @@ const Popup = ({
             <br />
             <div>
               Showing
-              <select id="starsRate" onChange={handleStarChange} selected value={selected}>
+              <select
+                id="starsRate"
+                onChange={handleStarChange}
+                selected
+                value={selected}
+              >
                 <option value="0">MOST RECENT</option>
                 <option value="5">FIVE STARS</option>
                 <option value="4">FOUR STARS</option>
@@ -72,4 +77,3 @@ const Popup = ({
 };
 
 export default Popup;
-
