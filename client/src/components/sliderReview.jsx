@@ -3,18 +3,19 @@ import StarRatings from "react-star-ratings";
 
 const SliderReview = ({ review }) => (
   <div>
-    <div style={{ fontWeight: "bold" }}>{review.name}</div>
+    <div className="sliderReviewName">{review.name}</div>
     <StarRatings
       rating={review.star_rating}
-      starRatedColor="gold"
+      starRatedColor="#FFC432"
       numberOfStars={5}
-      starDimension="20px"
-      starSpacing="5px"
+      starDimension="18px"
+      starSpacing="1px"
     />
-    <div>Traveled {review.traveled_date}</div>
-    <div style={{ fontWeight: "bold" }}>{review.title}</div>
-    <div>{review.description}</div>
-    <br />
+    <div className="sliderReviewDate">Traveled {review.traveled_date}</div>
+    <div className="sliderReviewTitleOuter">
+      <div className="sliderReviewTitle">{review.title}</div>
+    </div>
+    <div className="sliderReviewDescription">{review.description}</div>
   </div>
 );
 

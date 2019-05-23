@@ -4,6 +4,7 @@ import StarRatings from "react-star-ratings";
 const Graph = ({ one, two, three, four, five, reviews, handleStarChange, backgroundColor }) => {
   const total = one + two * 2 + three * 3 + four * 4 + five * 5;
   const average = total / reviews.length;
+  const averageFixed = average.toFixed(1);
   const round = Math.round(average * 2) / 2;
   const style = stars => {
     const rate = `${stars / reviews.length * 200}px`;
@@ -15,20 +16,18 @@ const Graph = ({ one, two, three, four, five, reviews, handleStarChange, backgro
   return reviews.length > 0 ? (
     <div>
       <div align="center">
-        <div className="averageRating">{average}</div>
-        <div>
-          <StarRatings
-            rating={round}
-            starRatedColor="gold"
-            numberOfStars={5}
-            starDimension="20px"
-            starSpacing="5px"
-          />
+        <div className="averageRating">{averageFixed}</div>
+          <div>
+            <StarRatings
+              rating={round}
+              starRatedColor="#FFC432"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="2px"
+            />
+          </div>
+          <div className="totalReviews">{reviews.length} independent reviews</div>
         </div>
-        <br />
-        <div>{reviews.length} independent reviews</div>
-      </div>
-      <br />
       <div>
         <div className="travelerRating">Filter by traveller’s rating</div>
         <br />

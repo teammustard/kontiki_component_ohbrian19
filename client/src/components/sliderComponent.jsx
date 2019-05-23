@@ -16,6 +16,7 @@ const SliderComponent = ({
 }) => {
   const total = one + two * 2 + three * 3 + four * 4 + five * 5;
   const average = total / reviews.length;
+  const averageFixed = average.toFixed(1); 
   const round = Math.round(average * 2) / 2;
   const settings = {
     dots: false,
@@ -38,14 +39,14 @@ const SliderComponent = ({
       <Slider {...settings}>
         <div align="center">
           <div>
-            <div className="averageRating">{average}</div>
+            <div className="averageRating">{averageFixed}</div>
             <div>
               <StarRatings
                 rating={round}
-                starRatedColor="gold"
+                starRatedColor="#FFC432"
                 numberOfStars={5}
                 starDimension="20px"
-                starSpacing="5px"
+                starSpacing="2px"
               />
             </div>
             <div className="totalReviews">{reviews.length} independent reviews</div>
