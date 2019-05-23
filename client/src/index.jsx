@@ -120,44 +120,49 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="mainBox">
-        <div className="reviewsTitle">REVIEWS</div>
-        <div className="tourTitle">for Argentina & Brazil Experience</div>
-        <br />
-        {this.state.allReviews.length > 0 ? (
-          <SliderComponent
+      <div>
+        <div className="outerBackground" />
+        <div className="mainBox">
+          <div className="title">
+            <div className="reviewsTitle">REVIEWS</div>
+            <div className="tourTitle">for Argentina & Brazil Experience</div>
+          </div>
+          {this.state.allReviews.length > 0 ? (
+            <SliderComponent
+              reviews={this.state.allReviews}
+              displayReviews={this.state.displayReviews}
+              one={this.state.oneStar}
+              two={this.state.twoStar}
+              three={this.state.threeStar}
+              four={this.state.fourStar}
+              five={this.state.fiveStar}
+              handleStarChange={this.handleStarChange}
+              backgroundColor={this.backgroundColor}
+            />
+          ) : null}
+          <br />
+          <div align="center">
+            <button className="readAllButton" onClick={this.toggleModal}>
+              READ ALL REVIEWS
+            </button>
+          </div>
+          <Popup
+            show={this.state.modalToggle}
+            handleClose={this.toggleModal}
             reviews={this.state.allReviews}
             displayReviews={this.state.displayReviews}
+            getAllReviews={this.getAllReviews}
             one={this.state.oneStar}
             two={this.state.twoStar}
             three={this.state.threeStar}
             four={this.state.fourStar}
             five={this.state.fiveStar}
             handleStarChange={this.handleStarChange}
+            selected={this.state.selected}
             backgroundColor={this.backgroundColor}
           />
-        ) : null}
-        <br />
-        <div align="center">
-          <button className="readAllButton" onClick={this.toggleModal}>
-            READ ALL REVIEWS
-          </button>
         </div>
-        <Popup
-          show={this.state.modalToggle}
-          handleClose={this.toggleModal}
-          reviews={this.state.allReviews}
-          displayReviews={this.state.displayReviews}
-          getAllReviews={this.getAllReviews}
-          one={this.state.oneStar}
-          two={this.state.twoStar}
-          three={this.state.threeStar}
-          four={this.state.fourStar}
-          five={this.state.fiveStar}
-          handleStarChange={this.handleStarChange}
-          selected={this.state.selected}
-          backgroundColor={this.backgroundColor}
-        />
+        <div className="outerBackground" />
       </div>
     );
   }
