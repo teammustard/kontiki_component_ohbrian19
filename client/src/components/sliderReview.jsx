@@ -2,7 +2,7 @@ import React from "react";
 import StarRatings from "react-star-ratings";
 
 const SliderReview = ({ review }) => (
-  <div>
+  <div className="sliderReview">
     <div className="sliderReviewName">{review.name}</div>
     <StarRatings
       rating={review.star_rating}
@@ -15,7 +15,14 @@ const SliderReview = ({ review }) => (
     <div className="sliderReviewTitleOuter">
       <div className="sliderReviewTitle">{review.title}</div>
     </div>
-    <div className="sliderReviewDescription">{review.description}</div>
+    <div className="sliderReviewDescription">
+      {review.description.length < 270
+        ? review.description
+        : review.description.slice(0, 270) + "..."}
+    </div>
+    <div className="sliderReviewReadMore">
+      {review.description.length >= 270 ? "READ MORE" : ""}
+    </div>
   </div>
 );
 
