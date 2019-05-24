@@ -123,9 +123,9 @@ class App extends React.Component {
       <div>
         <div className="outerBackground" />
         <div className="mainBox">
-          <div className="title">
-            <div className="reviewsTitle">REVIEWS</div>
-            <div className="tourTitle">for Argentina & Brazil Experience</div>
+          <div className="mainBoxTitle">
+            <div className="mainBoxTitleReviews">REVIEWS</div>
+            <div className="mainBoxTitleTour">for Argentina & Brazil Experience</div>
           </div>
           {this.state.allReviews.length > 0 ? (
             <SliderComponent
