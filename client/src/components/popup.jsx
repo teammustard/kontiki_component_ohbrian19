@@ -3,8 +3,6 @@ import PopupReview from "./popupReview.jsx";
 import PopupGraph from "./popupGraph.jsx";
 import JwPagination from "jw-react-pagination";
 
-
-
 class Popup extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +83,7 @@ class Popup extends React.Component {
                 {/* <div>
                   {this.state.pager.currentPage} of {this.state.pager.totalpages}
                 </div> */}
-                <JwPagination items={this.props.displayReviews} onChangePage={this.onChangePage} labels={customLabels}/>
+                <JwPagination items={this.props.displayReviews} onChangePage={this.onChangePage} labels={customLabels} />
               </div>
             </div>
             <div className="rightCol">

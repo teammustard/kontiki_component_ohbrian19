@@ -74,7 +74,6 @@ class Tours extends React.Component {
     if (!Number(id)) {
       id = document.getElementById("starsRate").value;
     }
-
     return axios
       .get(`/tours/stars/${this.props.match.params.tourId}/${id}`)
       .then(data => {
@@ -153,6 +152,7 @@ class Tours extends React.Component {
               five={this.state.fiveStar}
               handleStarChange={this.handleStarChange}
               backgroundColor={this.backgroundColor}
+              directPopup={this.toggleModal}
             />
           ) : null}
           <br />

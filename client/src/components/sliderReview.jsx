@@ -1,7 +1,8 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-const SliderReview = ({ review }) => (
+const SliderReview = ({ review, directPopup }) => (
   <div className="sliderReview">
     <div className="sliderReviewName">{review.name}</div>
     <StarRatings
@@ -21,7 +22,9 @@ const SliderReview = ({ review }) => (
         : review.description.slice(0, 270) + "..."}
     </div>
     <div className="sliderReviewReadMore">
-      {review.description.length >= 270 ? "READ MORE" : ""}
+      {review.description.length >= 270 
+        ? <Link to="findMe" onClick={directPopup} activeClass="active" containerId={review.id.toString()}>READ MORE</Link>
+        : null}
     </div>
   </div>
 );

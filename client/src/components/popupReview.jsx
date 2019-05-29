@@ -1,6 +1,8 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 class PopupReview extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,9 @@ class PopupReview extends React.Component {
 
   render() {
     return (
-      <div className="popupReview">
+      
+      <div className="popupReview" id={this.props.review.id.toString()}>
+        <Element name="findMe">
         <div className="popupReviewName">{this.props.review.name}</div>
         <StarRatings
           rating={this.props.review.star_rating}
@@ -57,6 +61,7 @@ class PopupReview extends React.Component {
               <br />
             </div>
         }
+        </Element>
       </div>
     )
   }
