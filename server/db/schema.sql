@@ -1,15 +1,123 @@
-DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS tours;
+CREATE TABLE tours (
+    id INTEGER PRIMARY KEY NOT NULL,
+    tour_title TEXT
+);
 
+DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     star_rating INTEGER NOT NULL, 
     title TEXT NOT NULL,
     description TEXT NOT NULL,
     booked_from TEXT,
     traveled_date TEXT,
-    tour_id INTEGER NOT NULL
+    tour_id INTEGER NOT NULL,
+    FOREIGN KEY (tour_id) REFERENCES tours (id)
 );
+
+INSERT INTO tours (id,tour_title) VALUES (1,"for Argentina & Brazil Experience");
+INSERT INTO tours (id,tour_title) VALUES (2,"European Discovery");
+INSERT INTO tours (id,tour_title) VALUES (3,"European Discovery(winter)");
+INSERT INTO tours (id,tour_title) VALUES (4,"European Magic");
+INSERT INTO tours (id,tour_title) VALUES (5,"Simply Italy");
+INSERT INTO tours (id,tour_title) VALUES (6,"Greek Island Hopping");
+INSERT INTO tours (id,tour_title) VALUES (7,"European Horizon");
+INSERT INTO tours (id,tour_title) VALUES (8,"Meet the Seoul");
+INSERT INTO tours (id,tour_title) VALUES (9,"Italian Espresso");
+INSERT INTO tours (id,tour_title) VALUES (10,"Ireland");
+INSERT INTO tours (id,tour_title) VALUES (11,"Thai Island Hopper East");
+INSERT INTO tours (id,tour_title) VALUES (12,"Eastern Rocker");
+INSERT INTO tours (id,tour_title) VALUES (13,"European Whirl");
+INSERT INTO tours (id,tour_title) VALUES (14,"Thai Island Hopper West");
+INSERT INTO tours (id,tour_title) VALUES (15,"Mediterranean Quest");
+INSERT INTO tours (id,tour_title) VALUES (16,"European Inspiration");
+INSERT INTO tours (id,tour_title) VALUES (17,"Eastern Quest");
+INSERT INTO tours (id,tour_title) VALUES (18,"Spain, Morocco & Portugal");
+INSERT INTO tours (id,tour_title) VALUES (19,"Spanish Spree");
+INSERT INTO tours (id,tour_title) VALUES (20,"Eastern Trail");
+INSERT INTO tours (id,tour_title) VALUES (21,"Eternal India");
+INSERT INTO tours (id,tour_title) VALUES (22,"Vietnam Highlights");
+INSERT INTO tours (id,tour_title) VALUES (23,"Cambodia & Laos Uncovered");
+INSERT INTO tours (id,tour_title) VALUES (24,"Big Indochina Adventure");
+INSERT INTO tours (id,tour_title) VALUES (25,"China Adventure");
+INSERT INTO tours (id,tour_title) VALUES (26,"Japan Winter Wonder plus 6 day Ski");
+INSERT INTO tours (id,tour_title) VALUES (27,"Me to We India");
+INSERT INTO tours (id,tour_title) VALUES (28,"Russia Food Tour");
+INSERT INTO tours (id,tour_title) VALUES (29,"Munch Asia");
+INSERT INTO tours (id,tour_title) VALUES (30,"Southern Thai Highlights");
+INSERT INTO tours (id,tour_title) VALUES (31,"ipsum dolor");
+INSERT INTO tours (id,tour_title) VALUES (32,"ultricies sem magna");
+INSERT INTO tours (id,tour_title) VALUES (33,"Quisque fringilla");
+INSERT INTO tours (id,tour_title) VALUES (34,"lorem. Donec");
+INSERT INTO tours (id,tour_title) VALUES (35,"tempor augue ac ipsum.");
+INSERT INTO tours (id,tour_title) VALUES (36,"ac");
+INSERT INTO tours (id,tour_title) VALUES (37,"Sed");
+INSERT INTO tours (id,tour_title) VALUES (38,"ultrices iaculis");
+INSERT INTO tours (id,tour_title) VALUES (39,"aliquet molestie");
+INSERT INTO tours (id,tour_title) VALUES (40,"Cras dolor dolor, tempus");
+INSERT INTO tours (id,tour_title) VALUES (41,"Aliquam gravida mauris ut mi.");
+INSERT INTO tours (id,tour_title) VALUES (42,"Nunc");
+INSERT INTO tours (id,tour_title) VALUES (43,"Cum");
+INSERT INTO tours (id,tour_title) VALUES (44,"risus. Duis a");
+INSERT INTO tours (id,tour_title) VALUES (45,"velit dui,");
+INSERT INTO tours (id,tour_title) VALUES (46,"aliquet");
+INSERT INTO tours (id,tour_title) VALUES (47,"commodo ipsum.");
+INSERT INTO tours (id,tour_title) VALUES (48,"ipsum non arcu. Vivamus");
+INSERT INTO tours (id,tour_title) VALUES (49,"fermentum arcu. Vestibulum ante ipsum");
+INSERT INTO tours (id,tour_title) VALUES (50,"tempus risus. Donec egestas. Duis");
+INSERT INTO tours (id,tour_title) VALUES (51,"venenatis vel, faucibus id, libero.");
+INSERT INTO tours (id,tour_title) VALUES (52,"Nunc ut erat. Sed nunc");
+INSERT INTO tours (id,tour_title) VALUES (53,"Quisque");
+INSERT INTO tours (id,tour_title) VALUES (54,"enim, condimentum eget, volutpat");
+INSERT INTO tours (id,tour_title) VALUES (55,"mollis non, cursus");
+INSERT INTO tours (id,tour_title) VALUES (56,"egestas. Aliquam fringilla cursus purus.");
+INSERT INTO tours (id,tour_title) VALUES (57,"sagittis. Duis");
+INSERT INTO tours (id,tour_title) VALUES (58,"nisi magna sed dui.");
+INSERT INTO tours (id,tour_title) VALUES (59,"Suspendisse ac");
+INSERT INTO tours (id,tour_title) VALUES (60,"Nullam");
+INSERT INTO tours (id,tour_title) VALUES (61,"lectus");
+INSERT INTO tours (id,tour_title) VALUES (62,"Fusce");
+INSERT INTO tours (id,tour_title) VALUES (63,"lectus");
+INSERT INTO tours (id,tour_title) VALUES (64,"elit");
+INSERT INTO tours (id,tour_title) VALUES (65,"vel, convallis in,");
+INSERT INTO tours (id,tour_title) VALUES (66,"et ultrices posuere");
+INSERT INTO tours (id,tour_title) VALUES (67,"egestas. Duis");
+INSERT INTO tours (id,tour_title) VALUES (68,"in magna.");
+INSERT INTO tours (id,tour_title) VALUES (69,"est, vitae sodales nisi");
+INSERT INTO tours (id,tour_title) VALUES (70,"arcu. Vestibulum ante");
+INSERT INTO tours (id,tour_title) VALUES (71,"turpis");
+INSERT INTO tours (id,tour_title) VALUES (72,"Cras convallis");
+INSERT INTO tours (id,tour_title) VALUES (73,"fringilla euismod enim. Etiam gravida");
+INSERT INTO tours (id,tour_title) VALUES (74,"sollicitudin commodo ipsum.");
+INSERT INTO tours (id,tour_title) VALUES (75,"mollis lectus pede");
+INSERT INTO tours (id,tour_title) VALUES (76,"lectus");
+INSERT INTO tours (id,tour_title) VALUES (77,"amet, risus.");
+INSERT INTO tours (id,tour_title) VALUES (78,"gravida. Aliquam tincidunt, nunc ac");
+INSERT INTO tours (id,tour_title) VALUES (79,"eu, ligula.");
+INSERT INTO tours (id,tour_title) VALUES (80,"Phasellus ornare. Fusce");
+INSERT INTO tours (id,tour_title) VALUES (81,"vel est tempor bibendum. Donec");
+INSERT INTO tours (id,tour_title) VALUES (82,"vitae semper egestas, urna justo");
+INSERT INTO tours (id,tour_title) VALUES (83,"consectetuer adipiscing elit. Aliquam");
+INSERT INTO tours (id,tour_title) VALUES (84,"magnis dis");
+INSERT INTO tours (id,tour_title) VALUES (85,"rhoncus. Donec");
+INSERT INTO tours (id,tour_title) VALUES (86,"augue ac");
+INSERT INTO tours (id,tour_title) VALUES (87,"sed dolor. Fusce");
+INSERT INTO tours (id,tour_title) VALUES (88,"at pede.");
+INSERT INTO tours (id,tour_title) VALUES (89,"diam");
+INSERT INTO tours (id,tour_title) VALUES (90,"eu tellus. Phasellus elit");
+INSERT INTO tours (id,tour_title) VALUES (91,"egestas ligula.");
+INSERT INTO tours (id,tour_title) VALUES (92,"elit. Aliquam auctor, velit");
+INSERT INTO tours (id,tour_title) VALUES (93,"Cum sociis natoque penatibus");
+INSERT INTO tours (id,tour_title) VALUES (94,"ut, nulla.");
+INSERT INTO tours (id,tour_title) VALUES (95,"arcu. Vivamus sit amet risus.");
+INSERT INTO tours (id,tour_title) VALUES (96,"Nunc ullamcorper, velit in aliquet");
+INSERT INTO tours (id,tour_title) VALUES (97,"dolor vitae dolor.");
+INSERT INTO tours (id,tour_title) VALUES (98,"massa non");
+INSERT INTO tours (id,tour_title) VALUES (99,"Quisque ornare tortor at");
+INSERT INTO tours (id,tour_title) VALUES (100,"Food of South Korea");
+
 INSERT INTO reviews (id,name,star_rating,title,description,booked_from,traveled_date,tour_id) VALUES (1,"Quamar",5,"massa non ante","vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam vitae diam. Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem","Singapore","March 2015",77);
 INSERT INTO reviews (id,name,star_rating,title,description,booked_from,traveled_date,tour_id) VALUES (2,"Rigel",3,"ornare, elit","enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero. Proin","Bolivia","August 2018",84);
 INSERT INTO reviews (id,name,star_rating,title,description,booked_from,traveled_date,tour_id) VALUES (3,"Ora",5,"gravida non,","iaculis quis, pede. Praesent eu dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque venenatis lacus. Etiam bibendum fermentum metus. Aenean sed pede nec","China","March 2017",18);

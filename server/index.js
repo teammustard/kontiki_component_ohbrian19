@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db/index.js');
+const path = require('path')
 
 const app = express();
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/kontiki/reviews', (req, res) => {  
-  db.getAllData((err, data) => {
+// /tours/:tourId
+app.get('/tours/review/:tourId', (req, res) => {  
+  db.getAllData(req.params.tourId, (err, data) => {
     if (err) {
       res.status(500);
     } else {
@@ -18,14 +20,29 @@ app.get('/kontiki/reviews', (req, res) => {
   })
 });
 
-app.get('/kontiki/stars/:star', (req, res) => {
-  db.getStarData(req.params.star, (err, data) => {
+// /tours/:tourId/:star
+app.get('/tours/stars/:tourId/:star', (req, res) => {
+  db.getStarData([req.params.tourId, req.params.star], (err, data) => {
     if (err) {
       res.status(500);
     } else {
       res.send(data);
     }
   })
+})
+
+app.get('/tours/title/:tourId', (req, res) => {
+  db.getTitle(req.params.tourId, (err, data) => {
+    if (err) {
+      res.status(500);
+    } else {
+      res.send(data);
+    }
+  })
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 })
 
 app.listen(3000, () => {

@@ -28,7 +28,7 @@ const SliderComponent = ({
   };
 
   const style = stars => {
-    const rate = `${(stars / reviews.length) * 200}px`;
+    const rate = `${(stars / reviews.length) * 100}px`;
     return {
       width: rate
     };
