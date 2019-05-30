@@ -7,16 +7,16 @@ class Tours extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allReviews: [], // all the reviews
-      title: '', // tour title
-      displayReviews: [], // display based on stars
+      allReviews: [], // array of entire reviews
+      title: "", // title of tour
+      displayReviews: [], // array of displayed reviews sorted by star_rating
       modalToggle: false, // state of modal button popup
-      selected: 0, // selected option value
-      oneStar: 0,
+      selected: 0, // selected option value (star_rating)
+      oneStar: 0, // *********************************
       twoStar: 0,
-      threeStar: 0,
+      threeStar: 0, //       Number of star_rating
       fourStar: 0,
-      fiveStar: 0
+      fiveStar: 0 // *********************************
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -61,34 +61,49 @@ class Tours extends React.Component {
       .then(data => {
         this.setState({
           title: data.data.tour_title
-        })
+        });
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
   handleStarChange(e) {
     // sorts reviews by star onchange or onclick
     let id = e.target.id;
+    let stars;
     if (!Number(id)) {
       id = document.getElementById("starsRate").value;
     }
-    return axios
-      .get(`/tours/stars/${this.props.match.params.tourId}/${id}`)
-      .then(data => {
-        if (this.state.selected === id || id === "0") {
-          this.getAllReviews();
-        } else {
-          this.setState({
-            displayReviews: data.data,
-            selected: id
-          });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    if (id === "1") {
+      stars = this.state.oneStar;
+    } else if (id === "2") {
+      stars = this.state.twoStar;
+    } else if (id === "3") {
+      stars = this.state.threeStar;
+    } else if (id === "4") {
+      stars = this.state.fourStar;
+    } else if (id === "5") {
+      stars = this.state.fiveStar;
+    }
+
+    if (stars !== 0) {
+      return axios
+        .get(`/tours/stars/${this.props.match.params.tourId}/${id}`)
+        .then(data => {
+          if (this.state.selected === id || id === "0") {
+            this.getAllReviews();
+          } else {
+            this.setState({
+              displayReviews: data.data,
+              selected: id
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 
   backgroundColor(selected) {

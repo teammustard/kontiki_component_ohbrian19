@@ -17,7 +17,7 @@ const SliderComponent = ({
 }) => {
   const total = one + two * 2 + three * 3 + four * 4 + five * 5;
   const average = total / reviews.length;
-  const averageFixed = average.toFixed(1); 
+  const averageFixed = average.toFixed(1);
   const round = Math.round(average * 2) / 2;
   const settings = {
     dots: false,
@@ -50,7 +50,9 @@ const SliderComponent = ({
                 starSpacing="2px"
               />
             </div>
-            <div className="totalReviews">{reviews.length} independent reviews</div>
+            <div className="totalReviews">
+              {reviews.length} independent reviews
+            </div>
           </div>
         </div>
         <div>
@@ -59,25 +61,101 @@ const SliderComponent = ({
             <br />
             <div className="sliderStarOuterBox" onClick={handleStarChange}>
               <div className="sliderStarInnerBox" id="5">
-                <span className="sliderStarBar">★&ensp;5&emsp;</span><span style={backgroundColor("5")} className={five !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"} id="5">{five}</span><span style={Object.assign(style(five), backgroundColor("5"))} className="sliderStarBarTwo" id="5" />
+                <span className="sliderStarBar">★&ensp;5&emsp;</span>
+                <span
+                  style={backgroundColor("5")}
+                  className={
+                    five !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"
+                  }
+                  id="5"
+                >
+                  {five}
+                </span>
+                <span
+                  style={Object.assign(style(five), backgroundColor("5"))}
+                  className="sliderStarBarTwo"
+                  id="5"
+                />
               </div>
               <div className="sliderStarInnerBox" id="4">
-                <span className="sliderStarBar">★&ensp;4&emsp;</span><span style={backgroundColor("4")} className={four !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"} id="4">{four}</span><span style={Object.assign(style(four), backgroundColor("4"))} className="sliderStarBarTwo" id="4" />
+                <span className="sliderStarBar">★&ensp;4&emsp;</span>
+                <span
+                  style={backgroundColor("4")}
+                  className={
+                    four !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"
+                  }
+                  id="4"
+                >
+                  {four}
+                </span>
+                <span
+                  style={Object.assign(style(four), backgroundColor("4"))}
+                  className="sliderStarBarTwo"
+                  id="4"
+                />
               </div>
               <div className="sliderStarInnerBox" id="3">
-                <span className="sliderStarBar">★&ensp;3&emsp;</span><span style={backgroundColor("3")} className={three !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"} id="3">{three}</span><span style={Object.assign(style(three), backgroundColor("3"))} className="sliderStarBarTwo" id="3" />
+                <span className="sliderStarBar">★&ensp;3&emsp;</span>
+                <span
+                  style={backgroundColor("3")}
+                  className={
+                    three !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"
+                  }
+                  id="3"
+                >
+                  {three}
+                </span>
+                <span
+                  style={Object.assign(style(three), backgroundColor("3"))}
+                  className="sliderStarBarTwo"
+                  id="3"
+                />
               </div>
               <div className="sliderStarInnerBox" id="2">
-                <span className="sliderStarBar">★&ensp;2&emsp;</span><span style={backgroundColor("2")} className={two !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"} id="2">{two}</span><span style={Object.assign(style(two), backgroundColor("2"))} className="sliderStarBarTwo" id="2" />
+                <span className="sliderStarBar">★&ensp;2&emsp;</span>
+                <span
+                  style={backgroundColor("2")}
+                  className={
+                    two !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"
+                  }
+                  id="2"
+                >
+                  {two}
+                </span>
+                <span
+                  style={Object.assign(style(two), backgroundColor("2"))}
+                  className="sliderStarBarTwo"
+                  id="2"
+                />
               </div>
               <div className="sliderStarInnerBox" id="1">
-                <span className="sliderStarBar">★&ensp;1&emsp;</span><span style={backgroundColor("1")} className={one !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"} id="1">{one}</span><span style={Object.assign(style(one), backgroundColor("1"))} className="sliderStarBarTwo" id="1" />
+                <span className="sliderStarBar">★&ensp;1&emsp;</span>
+                <span
+                  style={backgroundColor("1")}
+                  className={
+                    one !== 0 ? "sliderStarBarOne" : "sliderStarBarNone"
+                  }
+                  id="1"
+                >
+                  {one}
+                </span>
+                <span
+                  style={Object.assign(style(one), backgroundColor("1"))}
+                  className="sliderStarBarTwo"
+                  id="1"
+                />
               </div>
             </div>
           </div>
         </div>
         {displayReviews.slice(0, 20).map((review, index) => {
-          return <SliderReview key={index} review={review} directPopup={directPopup} />;
+          return (
+            <SliderReview
+              key={index}
+              review={review}
+              directPopup={directPopup}
+            />
+          );
         })}
       </Slider>
     </div>

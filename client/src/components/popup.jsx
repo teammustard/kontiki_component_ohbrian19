@@ -2,6 +2,15 @@ import React from "react";
 import PopupReview from "./popupReview.jsx";
 import PopupGraph from "./popupGraph.jsx";
 import JwPagination from "jw-react-pagination";
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 
 class Popup extends React.Component {
   constructor(props) {
@@ -14,28 +23,37 @@ class Popup extends React.Component {
   }
 
   onChangePage(pageOfItems) {
-    this.setState({ 
-      pageOfItems 
+    this.setState({
+      pageOfItems
     });
   }
 
   render() {
     const customLabels = {
-      previous: '<',
-      next: '>'
-    }
+      previous: "<",
+      next: ">"
+    };
     return (
-      <div className={this.props.show ? "modal display-block" : "modal display-none"}>
+      <div
+        className={
+          this.props.show ? "modal display-block" : "modal display-none"
+        }
+      >
         <section className="modal-main">
           <div className="modalHeaderSticky">
             &nbsp;&nbsp;&nbsp;&nbsp;Reviews
-            <button className="modalHeaderClose" onClick={this.props.handleClose}>
+            <button
+              className="modalHeaderClose"
+              onClick={this.props.handleClose}
+            >
               ✕
             </button>
           </div>
 
           <div className="popupTitle">
-            <div className="popupTitleTour">{this.props.title.toUpperCase()}</div>
+            <div className="popupTitleTour">
+              {this.props.title.toUpperCase()}
+            </div>
           </div>
 
           <div className="popupSortCategory">
@@ -51,11 +69,21 @@ class Popup extends React.Component {
                   value={this.props.selected}
                 >
                   <option value="0">MOST RECENT</option>
-                  <option value="5">FIVE STARS</option>
-                  <option value="4">FOUR STARS</option>
-                  <option value="3">THREE STARS</option>
-                  <option value="2">TWO STARS</option>
-                  <option value="1">ONE STAR</option>
+                  {this.props.five !== 0 ? (
+                    <option value="5">FIVE STARS</option>
+                  ) : null}
+                  {this.props.four !== 0 ? (
+                    <option value="4">FOUR STARS</option>
+                  ) : null}
+                  {this.props.three !== 0 ? (
+                    <option value="3">THREE STARS</option>
+                  ) : null}
+                  {this.props.two !== 0 ? (
+                    <option value="2">TWO STARS</option>
+                  ) : null}
+                  {this.props.one !== 0 ? (
+                    <option value="1">ONE STARS</option>
+                  ) : null}
                 </select>
               </span>
               <span className="popupSortCategoryLocationFrom">
@@ -66,7 +94,10 @@ class Popup extends React.Component {
                 <option value="NEAR ME">NEAR ME</option>
               </select>
               &nbsp;&nbsp;
-              <button className="resetButton" onClick={this.props.getAllReviews}>
+              <button
+                className="resetButton"
+                onClick={this.props.getAllReviews}
+              >
                 RESET
               </button>
             </div>
@@ -74,16 +105,22 @@ class Popup extends React.Component {
 
           <div className="container">
             <div className="leftCol">
-              {this.state.pageOfItems.length > 0
-                ? this.state.pageOfItems.map((review, index) => {
-                    return <PopupReview key={index} review={review} />;
-                  })
-                : null}
+              <Element name="nestedContainer" id="containerElement">
+                {this.state.pageOfItems.length > 0
+                  ? this.state.pageOfItems.map((review, index) => {
+                      return <PopupReview key={index} review={review} />;
+                    })
+                  : null}
+              </Element>
               <div className="paginationMain">
                 {/* <div>
                   {this.state.pager.currentPage} of {this.state.pager.totalpages}
                 </div> */}
-                <JwPagination items={this.props.displayReviews} onChangePage={this.onChangePage} labels={customLabels} />
+                <JwPagination
+                  items={this.props.displayReviews}
+                  onChangePage={this.onChangePage}
+                  labels={customLabels}
+                />
               </div>
             </div>
             <div className="rightCol">
@@ -106,4 +143,3 @@ class Popup extends React.Component {
 }
 
 export default Popup;
-
