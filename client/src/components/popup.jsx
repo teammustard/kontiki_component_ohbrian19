@@ -36,10 +36,10 @@ class Popup extends React.Component {
     return (
       <div
         className={
-          this.props.show ? "modal display-block" : "modal display-none"
+          this.props.show ? "modalPopup displayPopup-block" : "modalPopup displayPopup-none"
         }
       >
-        <section className="modal-main">
+        <section className="modalPopup-main">
           <div className="modalHeaderSticky">
             &nbsp;&nbsp;&nbsp;&nbsp;Reviews
             <button
