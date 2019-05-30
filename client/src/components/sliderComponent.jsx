@@ -53,6 +53,19 @@ const SliderComponent = ({
             <div className="totalReviews">
               {reviews.length} independent reviews
             </div>
+            <div className="sliderLogo">
+              <div className="feefoLogo">
+                {" "}
+                Powered by
+                <img src="/img/feefo_logo.svg" className="feefoLogo-img" />
+              </div>
+              <div className="feefoGold">
+                <img
+                  src="/img/feefo_gold_trusted_service_2018_light.svg"
+                  className="feefoGold-img"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div>

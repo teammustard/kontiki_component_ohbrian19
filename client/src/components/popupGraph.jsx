@@ -38,6 +38,15 @@ const PopupGraph = ({
         <div className="popupGraphTotalReviews">
           {reviews.length} independent reviews
         </div>
+        <div className="feefoLogoBox">
+          <div className="feefoLogo">
+            {" "}
+            Powered by
+            <div>
+              <img src="/img/feefo_logo.svg" className="feefoLogo-img" />
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <div className="popupStar">
