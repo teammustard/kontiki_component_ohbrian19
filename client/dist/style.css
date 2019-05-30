@@ -686,7 +686,7 @@
 
 html .pagination {
   display: inline-block;
-  /* border: 0.5px solid lightgrey; */
+  border: 0.5px solid lightgrey;
   position: relative;
   box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
 }
