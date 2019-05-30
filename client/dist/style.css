@@ -396,7 +396,7 @@
   margin-top: 10px;
 }
 
-.container {
+.containerPopup {
   /* Modal popup divider into two columns*/
   display: flex;
   max-width: 1216px;

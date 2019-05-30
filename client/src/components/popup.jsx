@@ -103,7 +103,7 @@ class Popup extends React.Component {
             </div>
           </div>
 
-          <div className="container">
+          <div className="containerPopup">
             <div className="leftCol">
               <Element name="nestedContainer" id="containerElement">
                 {this.state.pageOfItems.length > 0
