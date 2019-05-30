@@ -43,7 +43,7 @@ const PopupGraph = ({
             {" "}
             Powered by
             <div>
-              <img src="/img/feefo_logo.svg" className="feefoLogo-img" />
+              <img src="http://52.15.160.112:3001/img/feefo_logo.svg" className="feefoLogo-img" />
             </div>
           </div>
         </div>

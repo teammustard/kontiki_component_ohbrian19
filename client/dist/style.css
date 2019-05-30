@@ -696,8 +696,12 @@ html .pagination li.page-number:hover {
   color: #23527C;
 }
 
-html .active .page-link {
+html .active {
   background: #EFEEF0;
+}
+
+html .page-link {
+  display: none;
 }
 
 html .slick-slider {
@@ -751,7 +755,3 @@ html .slick-prev::before {
   border-radius: 100%;
   transform: translate(21%, -22%);
 }
-
-/* html .page-link {
-  display: none;
-} */
