@@ -57,11 +57,11 @@ const SliderComponent = ({
               <div className="feefoLogo">
                 {" "}
                 Powered by
-                <img src="/img/feefo_logo.svg" className="feefoLogo-img" />
+                <img src="http://52.15.160.112:3001/img/feefo_logo.svg" className="feefoLogo-img" />
               </div>
               <div className="feefoGold">
                 <img
-                  src="/img/feefo_gold_trusted_service_2018_light.svg"
+                  src="http://52.15.160.112:3001/img/feefo_gold_trusted_service_2018_light.svg"
                   className="feefoGold-img"
                 />
               </div>

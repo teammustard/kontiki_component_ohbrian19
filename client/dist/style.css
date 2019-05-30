@@ -752,6 +752,6 @@ html .slick-prev::before {
   transform: translate(21%, -22%);
 }
 
-html .page-link {
+/* html .page-link {
   display: none;
-}
+} */
