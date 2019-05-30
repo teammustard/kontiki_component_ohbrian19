@@ -15,6 +15,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "image-webpack-loader": "^4.6.0",
     "jquery": "^3.4.1",
@@ -27,7 +28,9 @@
     "react-slick": "^0.24.0",
     "react-star-ratings": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "sqlite": "^3.0.3"
+    "sqlite": "^3.0.3",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
