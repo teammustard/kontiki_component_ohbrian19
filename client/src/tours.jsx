@@ -35,7 +35,7 @@ class Tours extends React.Component {
   getAllReviews() {
     // get all the reviews from db
     return axios
-      .get(`/tours/review/${this.props.match.params.tourId}`)
+      .get(`http://52.15.160.112:3001/tours/review/${this.props.match.params.tourId}`)
       .then(data => {
         this.setState(
           {
@@ -57,7 +57,7 @@ class Tours extends React.Component {
 
   getTourTitle() {
     return axios
-      .get(`/tours/title/${this.props.match.params.tourId}`)
+      .get(`http://52.15.160.112:3001/tours/title/${this.props.match.params.tourId}`)
       .then(data => {
         this.setState({
           title: data.data.tour_title
@@ -89,7 +89,7 @@ class Tours extends React.Component {
 
     if (stars !== 0) {
       return axios
-        .get(`/tours/stars/${this.props.match.params.tourId}/${id}`)
+        .get(`http://52.15.160.112:3001/tours/stars/${this.props.match.params.tourId}/${id}`)
         .then(data => {
           if (this.state.selected === id || id === "0") {
             this.getAllReviews();
