@@ -696,13 +696,9 @@ html .pagination li.page-number:hover {
   color: #23527C;
 }
 
-html .active .display {
+html .active .page-link {
   background: #EFEEF0;
 }
-/* 
-html .page-link {
-  display: none;
-} */
 
 html .slick-slider {
   overflow: hidden;
