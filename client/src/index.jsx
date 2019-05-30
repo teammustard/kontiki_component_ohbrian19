@@ -9,7 +9,7 @@ class Reviews extends React.Component {
   }
 
   render() {
-    return <Route path="/tours/:tourId" component={Tours} />;
+    return <Route path="http://52.15.160.112:3001/tours/:tourId" component={Tours} />;
   }
 }
 
