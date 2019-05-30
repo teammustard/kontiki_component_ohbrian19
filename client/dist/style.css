@@ -393,7 +393,9 @@
   font-weight: bold;
   border: 1px solid #fff;
   margin-right: 11px;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 11px;
+  line-height: normal;
 }
 
 .containerPopup {
@@ -748,4 +750,12 @@ html .slick-prev::before {
   height: 60px;
   border-radius: 100%;
   transform: translate(21%, -22%);
+}
+
+html .slick-first {
+  display: none;
+}
+
+html .slick-last {
+  display: none;
 }
