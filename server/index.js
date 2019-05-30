@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "/../client/dist")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -44,7 +44,7 @@ app.get("/tours/title/:tourId", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "/../client/dist/index.html"));
 });
 
 app.listen(PORT, () => {
