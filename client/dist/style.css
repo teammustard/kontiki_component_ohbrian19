@@ -1,0 +1,729 @@
+@font-face {
+  font-family: "Alternate-Gothic-No2-D";
+  src: url(./fonts/alternate-gothic-no2-d.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura-Condensed-Extra-Bold";
+  src: url(./fonts/Futura-Condensed-Extra-Bold.otf) format("opentype");
+}
+
+/************************************************
+
+
+
+                    Main CSS 
+ 
+ 
+ 
+ ************************************************/
+
+#app {
+  /* Background*/
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100%;
+}
+
+.outerBackground {
+  background-color: #f3f3f3;
+  padding: 10px;
+}
+.mainBox {
+  /* Main Box */
+  width: 90%;
+  padding: 70px 0;
+  background-color: #fff;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.05);
+  display: block;
+  margin: auto;
+  box-sizing: inherit;
+  line-height: 24px;
+}
+
+.mainBoxTitle {
+  /* Title Outer Div */
+  display: block;
+  height: auto;
+  margin: 0 auto 20px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.mainBoxTitleReviews {
+  /* Main Title */
+  font-family: "Alternate-Gothic-No2-D";
+  font-size: 2.875rem;
+  color: #302a3d;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mainBoxTitleTour {
+  /* Main Title Tour Name */
+  font-family: "Soleil";
+  font-size: 1.25rem;
+  margin-bottom: 70px;
+  color: #736e7e;
+}
+
+.averageRating,
+.popupGraphAverageRating {
+  /* Average Rating for Star */
+  font-family: "Futura-Condensed-Extra-Bold";
+  font-size: 3.125rem;
+  display: block;
+  line-height: 1em;
+  margin-bottom: 2px;
+  margin-top: 70px;
+}
+
+.totalReviews,
+.popupGraphTotalReviews {
+  /* Total Reviews */
+  font-family: "Soleil";
+  font-size: 0.875rem;
+  margin: 20px 0;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.sliderStar {
+  margin-left: 22px;
+}
+
+.sliderStarTitle {
+  /* TravelerRating */
+  font-family: "Soleil";
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #302a3d;
+  font-weight: 700;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.sliderStarOuterBox {
+  /* Star Box Outer */
+  display: inline-block;
+  height: 333px;
+  position: relative;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.sliderStarInnerBox {
+  /* Filter by Star CSS */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-family: "Soleil";
+  font-weight: 500;
+}
+
+.sliderStarBar {
+  width: 50px;
+}
+
+.sliderStarBarOne {
+  /* Green Box for Star*/
+  white-space: normal;
+  text-decoration: none;
+  background: #7be6c8;
+  font-size: 13px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  display: inline-block;
+  width: 30px;
+  border: 1px solid white;
+}
+
+.sliderStarBarNone {
+  white-space: normal;
+  text-decoration: none;
+  background: #EFEEF0;
+  font-size: 13px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  display: inline-block;
+  width: 30px;
+  border: 1px solid white;
+}
+
+.sliderStarBarTwo {
+  /* Green Box for Star */
+  background: #7be6c8;
+  line-height: 40px;
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  border: 1px solid white;
+}
+
+.sliderStarInnerBox:hover .sliderStarBarOne,
+.sliderStarInnerBox:hover .sliderStarBarTwo {
+  cursor: pointer;
+  background: #5dc8aa;
+}
+
+.sliderReview {
+  margin: 5px;
+}
+
+.sliderReviewName {
+  font-family: "Soleil";
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #302a3d;
+  font-weight: lighter;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.sliderReviewDate {
+  font-family: "Soleil-Light";
+  text-decoration: none;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #73637e;
+  font-weight: normal;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  position: relative;
+}
+
+.sliderReviewTitleOuter {
+  display: block;
+  height: auto;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.sliderReviewTitle {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin: 20px 0;
+  overflow: hidden;
+  font-family: "Soleil";
+  text-decoration: none;
+  color: #302a3d;
+  white-space: normal;
+  line-height: 1.3;
+  position: relative;
+  width: 100%;
+  font-weight: lighter;
+  text-overflow: ellipsis;
+}
+
+.sliderReviewDescription {
+  font-family: "Soleil-Light";
+  text-decoration: none;
+  color: #302a3d;
+  white-space: normal;
+  line-height: 1.3;
+  position: relative;
+  width: 100%;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.sliderReviewReadMore {
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  transition: opacity 1s ease-out;
+  white-space: nowrap;
+  width: 75px;
+  font-family: "Soleil-Light";
+  color: #fb0051;
+  text-decoration: none;
+  margin-top: 14px;
+}
+
+.sliderReviewReadMore:hover {
+  color: #CF0043;
+}
+
+.readAllButton {
+  /* Main Box Button */
+  background-color: white;
+  border: 1px solid #302a3d;
+  padding: 17px 36px;
+  font-size: 0.875rem;
+  bottom: 10px;
+  font-family: "Soleil";
+  cursor: pointer;
+  color: #302a3d;
+}
+
+.readAllButton:hover {
+  background-color: lightgray;
+}
+
+/************************************************
+
+
+
+                 MODAL POPUP CSS 
+ 
+ 
+ 
+ ************************************************/
+
+.modal {
+  /* Modal Popup CSS */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100vh - 0px);
+  overflow-y: scroll;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Modal Popup Sticky Top */
+.modalHeaderSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
+  font-size: 27px;
+  font-family: "Alternate-Gothic-No2-D";
+  color: #302a3d;
+  line-height: 52px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+/* Modal Popup Close Button */
+.modalHeaderClose {
+  float: right;
+  cursor: pointer;
+  outline: none;
+  font-size: 21px;
+  font-weight: bold;
+  border: 1px solid #fff;
+  margin-right: 11px;
+  margin-top: 10px;
+}
+
+.container {
+  /* Modal popup divider into two columns*/
+  display: flex;
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.leftCol {
+  flex: 0 0 75%;
+}
+
+.rightCol {
+  height: 500px;
+  flex: 0 0 25%;
+  position: sticky;
+  top: 90px;
+  left: 0;
+}
+
+.popupTitle {
+  display: flex;
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.popupTitleTour {
+  /* Reviews Title */
+  font-family: "Futura-Condensed-Extra-Bold";
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  padding-right: 330px;
+  text-align: left;
+}
+
+.popupSortCategory {
+  display: block;
+  padding: 20px 20px;
+  position: relative;
+  white-space: normal;
+  width: 100%;
+
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
+.popupSortCategoryStar {
+  display: inline-block;
+  height: 100%;
+  margin-right: 12px;
+  position: relative;
+  text-align: left;
+}
+
+.popupSortCategoryStarShowing, .popupSortCategoryLocationFrom {
+  font-size: 1rem;
+  line-height: 1.3em;
+  font-family: "Soleil";
+}
+
+/* .popupSortCategoryStar-select {
+  font-family: "Soleil";
+  position: relative;
+} */
+
+.resetButton {
+  border: 1px;
+  padding: 8px 15px;
+  font-size: .875rem;
+  background-color: transparent;
+  border: 1px solid #302A3D;
+  color: #302A3D;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Soleil";
+}
+
+.resetButton:hover {
+  background-color: lightgrey;
+}
+
+.popupReview {
+  margin-right: 32px;
+}
+
+.popupReviewName {
+  font-family: "Soleil";
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #302a3d;
+  font-weight: lighter;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.popupReviewDate {
+  font-family: "Soleil-Light";
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #73637e;
+  font-weight: normal;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.popupReviewBook {
+  color: #302a3d;
+}
+
+.popupReviewTitleOuter {
+  display: block;
+  height: auto;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.popupReviewTitle {
+  font-size: 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: block;
+  margin: 20px 0;
+  overflow: hidden;
+  font-family: "Soleil";
+  text-decoration: none;
+  color: #302a3d;
+  white-space: normal;
+  line-height: 1.3;
+  position: relative;
+  width: 100%;
+  font-weight: lighter;
+  text-overflow: ellipsis;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+.popupReviewDescription {
+  font-family: "Soleil-Light";
+  text-decoration: none;
+  color: #302a3d;
+  white-space: normal;
+  line-height: 1.3;
+  position: relative;
+  width: 100%;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.popupReviewReadMore {
+  font-family: "Soleil-Light";
+  color: #736E7E;
+  margin-top: 16px;
+}
+
+.popupReviewReadMore:hover {
+  cursor: pointer;
+}
+
+.popupGraphTopBox {
+  border: 1px solid #302a3d;
+  text-align: center;
+}
+
+
+.popupStar {
+  margin-left: 0;
+}
+
+.popupStarTitle {
+  font-family: "Soleil";
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #302a3d;
+  white-space: normal;
+  display: block;
+  line-height: 1;
+  position: relative;
+  text-align: left;
+  margin-top: 26px;
+}
+
+.popupStarOuterBox {
+  /* Star Box Outer */
+  display: inline-block;
+  height: 333px;
+  position: relative;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.popupStarInnerBox {
+  /* Filter by Star CSS */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-family: "Soleil";
+  font-weight: 500;
+}
+
+.popupStarBar {
+  width: 50px;
+}
+
+.popupStarBarOne {
+  /* Green Box for Star*/
+  white-space: normal;
+  text-decoration: none;
+  background: #7be6c8;
+  font-size: 13px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  display: inline-block;
+  width: 30px;
+  border: 1px solid white;
+}
+
+.popupStarBarNone {
+  /* Green Box for Star*/
+  white-space: normal;
+  text-decoration: none;
+  background: #EFEEF0;
+  font-size: 13px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  height: 40px;
+  display: inline-block;
+  width: 30px;
+  border: 1px solid white;
+}
+
+.popupStarBarTwo {
+  /* Green Box for Star */
+  background: #7be6c8;
+  line-height: 40px;
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  border: 1px solid white;
+}
+
+.popupStarInnerBox:hover .popupStarBarOne,
+.popupStarInnerBox:hover .popupStarBarTwo {
+  cursor: pointer;
+  background: #5dc8aa;
+}
+
+/****************************
+
+          Pagination
+
+****************************/
+
+.paginationMain {
+  color: #302A3D;
+  font-size: 20px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  font-family: "Soleil";
+  font-weight: lighter;
+}
+
+html .pagination {
+  display: inline-block;
+  border: 0.5px solid lightgrey;
+  position: relative;
+  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
+}
+html .pagination li.previous:hover,
+html .pagination li.next:hover,
+html .pagination li.page-number:hover {
+  color: #23527C;
+}
+
+html .active .page-link {
+  background: #EFEEF0;
+}
+
+/* 
+html .pagination li.previous {
+  display: inline-block;
+  border: 0.5px solid lightgrey;
+  position: absolute;
+  transform: translate(-715%, -3%);
+  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
+}
+
+html .pagination li.next {
+  display: inline-block;
+  border: 0.5px solid lightgrey;
+  position: absolute;
+  transform: translate(60%, -3%);
+  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
+}
+
+html .pagination li.first {
+  display: none;
+}
+
+html .pagination li.last {
+  display: none;
+} */
+
+
+html .slick-slider {
+  overflow: hidden;
+}
+
+html .slick-next,
+html .slick-next:hover,
+html .slick-next:focus {
+  background: #f3f3f3;
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transform: translate(50%, -85%);
+  z-index: 1;
+}
+
+html .slick-next::before {
+  content: ">";
+  color: black;
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transform: translate(-23%, -23%);
+}
+
+html .slick-prev,
+html .slick-prev:hover,
+html .slick-prev:focus {
+  background: #f3f3f3;
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transform: translate(-50%, -85%);
+  z-index: 1;
+}
+
+html .slick-prev::before {
+  content: "<";
+  color: black;
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transform: translate(21%, -22%);
+}
