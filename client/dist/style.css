@@ -698,32 +698,6 @@ html .active .page-link {
   background: #EFEEF0;
 }
 
-/* 
-html .pagination li.previous {
-  display: inline-block;
-  border: 0.5px solid lightgrey;
-  position: absolute;
-  transform: translate(-715%, -3%);
-  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
-}
-
-html .pagination li.next {
-  display: inline-block;
-  border: 0.5px solid lightgrey;
-  position: absolute;
-  transform: translate(60%, -3%);
-  box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.3);
-}
-
-html .pagination li.first {
-  display: none;
-}
-
-html .pagination li.last {
-  display: none;
-} */
-
-
 html .slick-slider {
   overflow: hidden;
 }

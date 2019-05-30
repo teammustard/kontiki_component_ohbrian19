@@ -37,6 +37,7 @@ class Tours extends React.Component {
     return axios
       .get(`http://52.15.160.112:3001/tours/review/${this.props.match.params.tourId}`)
       .then(data => {
+        console.log(data)
         this.setState(
           {
             allReviews: data.data,
