@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Tours from "./tours.jsx";
 import { BrowserRouter, Route } from "react-router-dom";
 
-class App extends React.Component {
+class Reviews extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -15,7 +15,7 @@ class App extends React.Component {
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Reviews />
   </BrowserRouter>,
-  document.getElementById("app")
+  document.getElementById("reviews")
 );

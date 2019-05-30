@@ -34,7 +34,6 @@ class Tours extends React.Component {
 
   getAllReviews() {
     // get all the reviews from db
-    console.log(this.props.match.params.tourId)
     return axios
       .get(`/tours/review/${this.props.match.params.tourId}`)
       .then(data => {
