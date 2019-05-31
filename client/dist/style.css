@@ -227,6 +227,7 @@
 
 .sliderReview {
   margin: 5px;
+  text-align: left;
 }
 
 .sliderReviewName {
@@ -364,6 +365,7 @@
 
 .displayPopup-block {
   display: block;
+  z-index: 100000;
 }
 
 .displayPopup-none {
@@ -488,6 +490,7 @@
 
 .popupReview {
   margin-right: 32px;
+  text-align: left;
 }
 
 .popupReviewName {
@@ -698,6 +701,7 @@ html .pagination li.page-number:hover {
 
 html .active .page-link {
   background: #EFEEF0;
+  border: none;
 }
 
 html .slick-slider {
