@@ -7,16 +7,16 @@ class Tours extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allReviews: [], // array of entire reviews
-      title: "", // title of tour
-      displayReviews: [], // array of displayed reviews sorted by star_rating
-      modalToggle: false, // state of modal button popup
-      selected: 0, // selected option value (star_rating)
-      oneStar: 0, // *********************************
+      allReviews: [], 
+      title: "",
+      displayReviews: [], 
+      modalToggle: false, 
+      selected: 0, 
+      oneStar: 0, 
       twoStar: 0,
-      threeStar: 0, //       Number of star_rating
+      threeStar: 0, 
       fourStar: 0,
-      fiveStar: 0 // *********************************
+      fiveStar: 0 
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -33,7 +33,6 @@ class Tours extends React.Component {
   }
 
   getAllReviews() {
-    // get all the reviews from db
     return axios
       .get(`http://52.15.160.112:3001/tours/review/${this.props.match.params.tourId}`)
       .then(data => {
@@ -69,7 +68,6 @@ class Tours extends React.Component {
   }
 
   handleStarChange(e) {
-    // sorts reviews by star onchange or onclick
     let id = e.target.id;
     let stars;
     if (!Number(id)) {
@@ -107,14 +105,12 @@ class Tours extends React.Component {
   }
 
   backgroundColor(selected) {
-    // change background when clicked on stars
     if (this.state.selected === selected) {
       return { background: "#FFC432" };
     }
   }
 
   numberOfStars() {
-    // get reviews based on star numbers
     for (let i = 0; i < this.state.allReviews.length; i++) {
       if (this.state.allReviews[i].star_rating === 1) {
         this.setState({
@@ -141,7 +137,6 @@ class Tours extends React.Component {
   }
 
   toggleModal() {
-    // when click on button, change the state
     this.setState({
       modalToggle: !this.state.modalToggle
     });

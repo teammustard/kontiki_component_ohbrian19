@@ -1,14 +1,6 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Element } from "react-scroll";
 
 class PopupReview extends React.Component {
   constructor(props) {

@@ -8,18 +8,17 @@
   src: url(./fonts/Futura-Condensed-Extra-Bold.otf) format("opentype");
 }
 
-/************************************************
+@font-face {
+  font-family: "Soleil";
+  src: url(./fonts/soleil_extra_bold.e6dcfa04.woff2) format("woff2");
+}
 
-
-
-                    Main CSS 
- 
- 
- 
- ************************************************/
+@font-face {
+  font-family: "Soleil-Light";
+  src: url(./fonts/soleil_regular.09ef1ae2.woff2) format("woff2");
+}
 
 #reviews {
-  /* Background*/
   background-color: #f3f3f3;
   width: 100%;
   height: 100%;
@@ -29,8 +28,8 @@
   background-color: #f3f3f3;
   padding: 10px;
 }
+
 .mainBox {
-  /* Main Box */
   width: 90%;
   padding: 70px 0;
   background-color: #fff;
@@ -42,7 +41,6 @@
 }
 
 .mainBoxTitle {
-  /* Title Outer Div */
   display: block;
   height: auto;
   margin: 0 auto 20px;
@@ -50,8 +48,8 @@
   text-align: center;
   width: 100%;
 }
+
 .mainBoxTitleReviews {
-  /* Main Title */
   font-family: "Alternate-Gothic-No2-D";
   font-size: 2.875rem;
   color: #302a3d;
@@ -61,7 +59,6 @@
 }
 
 .mainBoxTitleTour {
-  /* Main Title Tour Name */
   font-family: "Soleil";
   font-size: 1.25rem;
   margin-bottom: 70px;
@@ -69,7 +66,6 @@
 }
 
 .averageRating {
-  /* Average Rating for Star */
   font-family: "Futura-Condensed-Extra-Bold";
   font-size: 3.125rem;
   display: block;
@@ -79,7 +75,6 @@
 }
 
 .popupGraphAverageRating {
-  /* Average Rating for Star */
   font-family: "Futura-Condensed-Extra-Bold";
   font-size: 3.125rem;
   display: block;
@@ -90,7 +85,6 @@
 
 .totalReviews,
 .popupGraphTotalReviews {
-  /* Total Reviews */
   font-family: "Soleil";
   font-size: 0.875rem;
   margin: 20px 0;
@@ -129,7 +123,6 @@
   text-align: left;
   vertical-align: middle;
   margin-left: 65px;
-  /* border-left: 1px solid #D5D3DA; */
 }
 
 .feefoGold-img {
@@ -142,7 +135,6 @@
 }
 
 .sliderStarTitle {
-  /* TravelerRating */
   font-family: "Soleil";
   text-decoration: none;
   font-size: 16px;
@@ -159,7 +151,6 @@
 }
 
 .sliderStarOuterBox {
-  /* Star Box Outer */
   display: inline-block;
   height: 333px;
   position: relative;
@@ -168,7 +159,6 @@
 }
 
 .sliderStarInnerBox {
-  /* Filter by Star CSS */
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -181,7 +171,6 @@
 }
 
 .sliderStarBarOne {
-  /* Green Box for Star*/
   white-space: normal;
   text-decoration: none;
   background: #7be6c8;
@@ -210,7 +199,6 @@
 }
 
 .sliderStarBarTwo {
-  /* Green Box for Star */
   background: #7be6c8;
   line-height: 40px;
   position: relative;
@@ -315,7 +303,6 @@
 }
 
 .readAllButton {
-  /* Main Box Button */
   background-color: white;
   border: 1px solid #302a3d;
   padding: 17px 36px;
@@ -330,18 +317,7 @@
   background-color: lightgray;
 }
 
-/************************************************
-
-
-
-                 MODAL POPUP CSS 
- 
- 
- 
- ************************************************/
-
 .modalPopup {
-  /* Modal Popup CSS */
   position: fixed;
   top: 0;
   left: 0;
@@ -373,7 +349,6 @@
   display: none;
 }
 
-/* Modal Popup Sticky Top */
 .modalHeaderSticky {
   position: -webkit-sticky;
   position: sticky;
@@ -387,7 +362,6 @@
   z-index: 3;
 }
 
-/* Modal Popup Close Button */
 .modalHeaderClose {
   float: right;
   cursor: pointer;
@@ -402,7 +376,6 @@
 }
 
 .containerPopup {
-  /* Modal popup divider into two columns*/
   display: flex;
   max-width: 1216px;
   margin: 0 auto;
@@ -434,7 +407,6 @@
 }
 
 .popupTitleTour {
-  /* Reviews Title */
   font-family: "Futura-Condensed-Extra-Bold";
   font-size: 50px;
   font-weight: 700;
@@ -467,11 +439,6 @@
   line-height: 1.3em;
   font-family: "Soleil";
 }
-
-/* .popupSortCategoryStar-select {
-  font-family: "Soleil";
-  position: relative;
-} */
 
 .resetButton {
   border: 1px;
@@ -584,7 +551,6 @@
   text-align: center;
 }
 
-
 .popupStar {
   margin-left: 0;
 }
@@ -604,7 +570,6 @@
 }
 
 .popupStarOuterBox {
-  /* Star Box Outer */
   display: inline-block;
   height: 333px;
   position: relative;
@@ -613,7 +578,6 @@
 }
 
 .popupStarInnerBox {
-  /* Filter by Star CSS */
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -626,7 +590,6 @@
 }
 
 .popupStarBarOne {
-  /* Green Box for Star*/
   white-space: normal;
   text-decoration: none;
   background: #7be6c8;
@@ -641,7 +604,6 @@
 }
 
 .popupStarBarNone {
-  /* Green Box for Star*/
   white-space: normal;
   text-decoration: none;
   background: #EFEEF0;
@@ -656,7 +618,6 @@
 }
 
 .popupStarBarTwo {
-  /* Green Box for Star */
   background: #7be6c8;
   line-height: 40px;
   position: relative;
@@ -670,12 +631,6 @@
   cursor: pointer;
   background: #5dc8aa;
 }
-
-/****************************
-
-          Pagination
-
-****************************/
 
 .paginationMain {
   color: #302A3D;

@@ -2,15 +2,7 @@ import React from "react";
 import PopupReview from "./popupReview.jsx";
 import PopupGraph from "./popupGraph.jsx";
 import JwPagination from "jw-react-pagination";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Element } from "react-scroll";
 
 class Popup extends React.Component {
   constructor(props) {
@@ -36,7 +28,9 @@ class Popup extends React.Component {
     return (
       <div
         className={
-          this.props.show ? "modalPopup displayPopup-block" : "modalPopup displayPopup-none"
+          this.props.show
+            ? "modalPopup displayPopup-block"
+            : "modalPopup displayPopup-none"
         }
       >
         <section className="modalPopup-main">
