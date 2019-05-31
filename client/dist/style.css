@@ -361,6 +361,7 @@
   transform: translate(-50%, -50%);
   max-height: calc(100vh - 0px);
   overflow-y: scroll;
+  text-align: left;
 }
 
 .displayPopup-block {
