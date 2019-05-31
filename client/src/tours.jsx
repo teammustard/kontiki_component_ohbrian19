@@ -42,7 +42,7 @@ class Tours extends React.Component {
             allReviews: data.data,
             displayReviews: data.data,
             selected: 0
-          },
+          },  
           () => {
             if (this.state.oneStar === 0 && this.state.fiveStar === 0) {
               this.numberOfStars();
