@@ -27,7 +27,6 @@ const SliderComponent = ({
     slidesToScroll: 1,
     arrows: true
   };
-
   const style = stars => {
     const rate = `${(stars / reviews.length) * 100}px`;
     return {

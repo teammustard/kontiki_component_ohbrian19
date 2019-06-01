@@ -25,31 +25,19 @@ class Popup extends React.Component {
       previous: "<",
       next: ">"
     };
+    
     return (
-      <div
-        className={
-          this.props.show
-            ? "modalPopup displayPopup-block"
-            : "modalPopup displayPopup-none"
-        }
-      >
+      <div className={this.props.show ? "modalPopup displayPopup-block" : "modalPopup displayPopup-none"}>
         <section className="modalPopup-main">
           <div className="modalHeaderSticky">
             &nbsp;&nbsp;&nbsp;&nbsp;Reviews
-            <button
-              className="modalHeaderClose"
-              onClick={this.props.handleClose}
-            >
-              ✕
-            </button>
+            <button className="modalHeaderClose" onClick={this.props.handleClose}>✕</button>
           </div>
-
           <div className="popupTitle">
             <div className="popupTitleTour">
               {this.props.title.toUpperCase()}
             </div>
           </div>
-
           <div className="popupSortCategory">
             <div className="popupSortCategoryStar">
               <span className="popupSortCategoryStarShowing">
@@ -88,15 +76,9 @@ class Popup extends React.Component {
                 <option value="NEAR ME">NEAR ME</option>
               </select>
               &nbsp;&nbsp;
-              <button
-                className="resetButton"
-                onClick={this.props.getAllReviews}
-              >
-                RESET
-              </button>
+              <button className="resetButton" onClick={this.props.getAllReviews}>RESET</button>
             </div>
           </div>
-
           <div className="containerPopup">
             <div className="leftCol">
               <Element name="nestedContainer" id="containerElement">
@@ -107,9 +89,6 @@ class Popup extends React.Component {
                   : null}
               </Element>
               <div className="paginationMain">
-                {/* <div>
-                  {this.state.pager.currentPage} of {this.state.pager.totalpages}
-                </div> */}
                 <JwPagination
                   items={this.props.displayReviews}
                   onChangePage={this.onChangePage}
