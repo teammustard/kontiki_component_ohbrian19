@@ -57,13 +57,12 @@ const SliderComponent = ({
                 {" "}
                 Powered by
                 <img
-                  src="http://52.15.160.112:3001/img/feefo_logo.svg"
+                  src={window.location.href.includes("localhost") ? "/img/feefo_logo.svg" : "http://3.130.80.144:3001/img/feefo_logo.svg"}
                   className="feefoLogo-img"
                 />
               </div>
               <div className="feefoGold">
-                <img
-                  src="http://52.15.160.112:3001/img/feefo_gold_trusted_service_2018_light.svg"
+                <img  src={window.location.href.includes("localhost") ? "/img/feefo_gold_trusted_service_2018_light.svg" : "http://3.130.80.144:3001/img/feefo_gold_trusted_service_2018_light.svg"}
                   className="feefoGold-img"
                 />
               </div>

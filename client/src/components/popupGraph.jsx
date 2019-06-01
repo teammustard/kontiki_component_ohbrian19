@@ -43,7 +43,7 @@ const PopupGraph = ({
             {" "}
             Powered by
             <div>
-              <img src="http://52.15.160.112:3001/img/feefo_logo.svg" className="feefoLogo-img" />
+              <img src={window.location.href.includes("localhost") ? "/img/feefo_logo.svg" : "http://3.130.80.144:3001/img/feefo_logo.svg"} className="feefoLogo-img" />
             </div>
           </div>
         </div>

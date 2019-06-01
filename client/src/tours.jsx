@@ -31,10 +31,10 @@ class Tours extends React.Component {
     this.getTourTitle();
     this.getAllReviews();
   }
-
+  
   getAllReviews() {
     return axios
-      .get(`http://52.15.160.112:3001/tours/review/${this.props.match.params.tourId}`)
+      .get(window.location.href.includes("localhost") ? `/tours/review/${this.props.match.params.tourId}` : `http://3.130.80.144:3001/tours/review/${this.props.match.params.tourId}`)
       .then(data => {
         this.setState(
           {
@@ -50,13 +50,15 @@ class Tours extends React.Component {
         );
       })
       .catch(err => {
+        console.log(window.location.href)
         console.log(err);
-      });
+        
+      })
   }
-
+  
   getTourTitle() {
     return axios
-      .get(`http://52.15.160.112:3001/tours/title/${this.props.match.params.tourId}`)
+      .get(window.location.href.includes("localhost") ? `/tours/title/${this.props.match.params.tourId}` : `http://3.130.80.144:3001/tours/title/${this.props.match.params.tourId}`)
       .then(data => {
         this.setState({
           title: data.data.tour_title
@@ -85,9 +87,10 @@ class Tours extends React.Component {
       stars = this.state.fiveStar;
     }
 
+    
     if (stars !== 0) {
       return axios
-        .get(`http://52.15.160.112:3001/tours/stars/${this.props.match.params.tourId}/${id}`)
+        .get(window.location.href.includes("localhost") ? `/tours/stars/${this.props.match.params.tourId}` : `http://3.130.80.144:3001/tours/stars/${this.props.match.params.tourId}`)
         .then(data => {
           if (this.state.selected === id || id === "0") {
             this.getAllReviews();
