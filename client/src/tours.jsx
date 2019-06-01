@@ -86,11 +86,10 @@ class Tours extends React.Component {
     } else if (id === "5") {
       stars = this.state.fiveStar;
     }
-
-    
     if (stars !== 0) {
+      console.log('hi')
       return axios
-        .get(window.location.href.includes("localhost") ? `/tours/stars/${this.props.match.params.tourId}` : `http://3.130.80.144:3001/tours/stars/${this.props.match.params.tourId}`)
+        .get(window.location.href.includes("localhost") ? `/tours/stars/${this.props.match.params.tourId}/${id}` : `http://3.130.80.144:3001/tours/stars/${this.props.match.params.tourId}/${id}`)
         .then(data => {
           if (this.state.selected === id || id === "0") {
             this.getAllReviews();
