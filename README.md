@@ -2,7 +2,7 @@
 
 >  Kontiki is a full stack web application replica of Contiki Travel Tours's item page
 
-<img src='./snapshot.gif' height='60%' width='60%'>
+<img src='./snapshot.gif' height='80%' width='80%'>
 
 ## Related Projects
 
@@ -12,28 +12,17 @@
 
 ## Technologies Used
 
-- Front-End
+> Front-End
 * [React](https://reactjs.org/) 
-- Back-End
+> Back-End
 * [SQLite](https://www.sqlite.org/index.html)
 * [Node.js](https://nodejs.org/en/) 
 * [Express](https://expressjs.com)
 
-## Usage
 
-> 
+## Installing Dependencies
 
-## Requirements
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-`npm install`
-`npm start`
-
-Navigate to http://localhost:3001/tours/ followed by 1-100 to serve a unique tour
+> From within the root directory:
+> `npm install`
+> `npm start`
+> Navigate to http://localhost:3001/tours/ followed by 1-100 to serve a unique tour
