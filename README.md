@@ -2,7 +2,7 @@
 
 >  Kontiki is a full stack web application replica of Contiki Travel Tours's item page
 
-<img src='./snapshot.gif' height='80%' width='80%'>
+<img src='./snapshot.gif' align="center" height='80%' width='80%'>
 
 ## Related Projects
 
