@@ -23,6 +23,6 @@
 ## Installing Dependencies
 
 > From within the root directory
-> `npm install`
-> `npm start`
-> Navigate to http://localhost:3001/tours/ followed by 1-100 to serve a unique tour
+* `npm install`
+* `npm start`
+* Navigate to http://localhost:3001/tours/ followed by 1-100 to serve a unique tour
