@@ -1,28 +1,29 @@
 # Kontiki
 
->  Kontiki
+>  Kontiki is a full stack web application replica of Contiki Travel Tours's item page
+
+<img src='./snapshot.gif' height='60%' width='60%'>
 
 ## Related Projects
 
-- https://github.com/teammustard/kontiki_component_zackzeyu
-- https://github.com/teammustard/kontiki_component_cali3192
-- https://github.com/teammustard/kontiki_proxy_zackzeyu
-- https://github.com/teammustard/kontiki_proxy_ohbrian19
-- https://github.com/teammustard/kontiki_proxy_cali3192
+- [Kontiki_Proxy_Server_Brian](https://github.com/teammustard/kontiki_proxy_ohbrian19)
+- [Kontiki_Booking_Component_Zack](https://github.com/teammustard/kontiki_component_zackzeyu)
+- [Kontiki_Proxy_Server_Zack](https://github.com/teammustard/kontiki_proxy_zackzeyu)
 
-## Table of Contents
+## Technologies Used
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+- Front-End
+* [React](https://reactjs.org/) 
+- Back-End
+* [SQLite](https://www.sqlite.org/index.html)
+* [Node.js](https://nodejs.org/en/) 
+* [Express](https://expressjs.com)
 
 ## Usage
 
 > 
 
 ## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
@@ -32,9 +33,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ### Installing Dependencies
 
 From within the root directory:
+`npm install`
+`npm start`
 
-```sh
-npm install -g webpack
-npm install
-```
-
+Navigate to http://localhost:3001/tours/ followed by 1-100 to serve a unique tour

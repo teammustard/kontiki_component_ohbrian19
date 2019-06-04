@@ -1,9 +1,9 @@
 {
-  "name": "kontiki_component",
+  "name": "kontiki_component_reviews",
   "version": "1.0.0",
-  "description": "FEC projet",
+  "description": "Front end capstone project on kontiki_component_reviews",
   "repository": "https://github.com/teammustard/kontiki_component_ohbrian19",
-  "author": "Team Mustard",
+  "author": "Team Mustard_Brian Oh",
   "engines": {
     "node": ">=6.13.0"
   },
