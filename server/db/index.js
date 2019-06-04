@@ -1,6 +1,12 @@
 const sqlite3 = require("sqlite3").verbose();
 
-const db = new sqlite3.Database("./server/db/kontiki.db");
+const db = new sqlite3.Database("./server/db/kontiki.db", (err) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log("Connected to kontiki.db")
+  }
+});
 
 const getAllData = (data, callback) => {
   db.all(`SELECT * FROM reviews WHERE tour_id=(?)`, [data], (err, data) => {

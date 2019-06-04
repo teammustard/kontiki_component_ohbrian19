@@ -50,7 +50,6 @@ class Tours extends React.Component {
         );
       })
       .catch(err => {
-        console.log(window.location.href)
         console.log(err);
         
       })
@@ -87,7 +86,6 @@ class Tours extends React.Component {
       stars = this.state.fiveStar;
     }
     if (stars !== 0) {
-      console.log('hi')
       return axios
         .get(window.location.href.includes("localhost") ? `/tours/stars/${this.props.match.params.tourId}/${id}` : `http://3.130.80.144:3001/tours/stars/${this.props.match.params.tourId}/${id}`)
         .then(data => {
